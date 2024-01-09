@@ -29,32 +29,33 @@
 				<span class="navbar-toggler-icon"></span>
 				</button>
 
-			<div id="navigation" class="collapse navbar-collapse flex-column" >
+		<div id="navigation" class="collapse navbar-collapse flex-column" >
 			<?php
 				if(function_exists('the_custom_logo')){
 					$custom_logo_id = get_theme_mod('custom_logo');
 					$logo = wp_get_attachment_image_src($custom_logo_id)[0];
 				}
 			?>
-			<img class="mb-3 mx-auto logo" src="<?php echo $logo?>" alt="logo" >			
-				
+			<img class="mb-3 mx-auto logo" src="<?php echo $logo?>" alt="logo" >
+			<div class="contatiner m-3">
 				<?php
-					wp_nav_menu(
-						array(
-							'menu' => 'primary',
-							'container' => '',
-							'theme_location' => 'primary',
-							'items_wrap' => 
-								'<ul id="" class="navbar-nav flex-column text-sm-center text-md-left">%3$s</ul>'
-						)
-					);
-				?>
+						wp_nav_menu(
+							array(
+								'menu' => 'primary',
+								'container' => '',
+								'theme_location' => 'primary',
+								'items_wrap' => 
+									'<ul id="" class="navbar-nav flex-column text-sm-center text-md-left">%3$s</ul>'
+							)
+						);
+					?>
+			</div>
 
 				<hr>
 					<?php
 						dynamic_sidebar('sidebar-1');
 					?>
-			</div>
+		</div>
 		</nav>
 	</header>
 
